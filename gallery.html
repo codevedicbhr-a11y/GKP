@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery | Global Knowledge Public School</title>
+  <link rel="icon" type="image/png" href="assets/images/logo.png">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    .page-hero { background: linear-gradient(135deg, #0a1e4a, #1a3a7a); color:#fff; padding:3.5rem 0 2.5rem; text-align:center; }
+    .page-hero h1 { font-size:clamp(1.6rem,4vw,2.2rem); margin-bottom:0.4rem; }
+    .page-hero p { opacity:0.85; }
+    .breadcrumb { font-size:0.85rem; opacity:0.7; margin-bottom:0.8rem; }
+    .breadcrumb a { color:#f5a623; }
+    .gallery-page { padding:3rem 0; }
+    .gallery-full { display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:1.2rem; }
+    .gal-item { border-radius:12px; overflow:hidden; aspect-ratio:4/3; cursor:pointer; position:relative; box-shadow:0 6px 20px rgba(0,0,0,0.1); }
+    .gal-item img { width:100%; height:100%; object-fit:cover; transition:0.4s; }
+    .gal-item:hover img { transform:scale(1.08); }
+    .gal-item .cap { position:absolute; bottom:0; left:0; right:0; background:linear-gradient(transparent,rgba(0,0,0,0.7)); color:#fff; padding:1rem 0.8rem 0.6rem; font-size:0.85rem; font-weight:500; opacity:0; transition:0.3s; }
+    .gal-item:hover .cap { opacity:1; }
+    /* Lightbox */
+    .lightbox { position:fixed; inset:0; background:rgba(0,0,0,0.92); z-index:3000; display:flex; align-items:center; justify-content:center; opacity:0; visibility:hidden; transition:0.3s; }
+    .lightbox.active { opacity:1; visibility:visible; }
+    .lightbox img { max-width:90vw; max-height:85vh; border-radius:8px; box-shadow:0 10px 40px rgba(0,0,0,0.5); }
+    .lightbox-close { position:absolute; top:20px; right:28px; background:none; border:none; color:#fff; font-size:2rem; cursor:pointer; }
+    .lightbox-nav { position:absolute; top:50%; transform:translateY(-50%); background:rgba(255,255,255,0.15); border:none; color:#fff; width:48px; height:48px; border-radius:50%; font-size:1.3rem; cursor:pointer; display:flex; align-items:center; justify-content:center; }
+    .lightbox-nav:hover { background:rgba(255,255,255,0.3); }
+    .lightbox-prev { left:20px; }
+    .lightbox-next { right:20px; }
+  </style>
+</head>
+<body>
+  <div class="top-bar">
+    <div class="container top-bar-inner">
+      <div class="top-left">
+        <span><i class="fas fa-map-marker-alt"></i> Nirmali-05, Supaul, Bihar</span>
+        <a href="tel:+917296092039"><i class="fas fa-phone-alt"></i> 7296092039</a>
+        <a href="mailto:gkpsnirmali@gmail.com"><i class="fas fa-envelope"></i> gkpsnirmali@gmail.com</a>
+      </div>
+      <div class="top-right">
+        <span class="tagline">Learn &nbsp;•&nbsp; Grow &nbsp;•&nbsp; Succeed</span>
+        <div class="social">
+          <a href="https://www.instagram.com/globalknowledgepublicschool/" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://wa.me/917296092039" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <header id="header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo-area">
+        <img src="assets/images/logo.png" alt="Logo">
+        <div class="logo-text">
+          <strong>GLOBAL KNOWLEDGE</strong>
+          <strong>PUBLIC SCHOOL</strong>
+          <span>Nirmali-05, Supaul</span>
+        </div>
+      </a>
+      <nav>
+        <ul id="navMenu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="academics.html">Academics</a></li>
+          <li><a href="admissions.html">Admissions</a></li>
+          <li><a href="campus.html">Campus Life</a></li>
+          <li><a href="gallery.html" class="active">Gallery</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="admissions.html" class="btn-enquiry"><i class="fas fa-phone-alt"></i> Admission Enquiry</a></li>
+        </ul>
+      </nav>
+      <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
+    </div>
+  </header>
+
+  <div class="page-hero">
+    <div class="container">
+      <div class="breadcrumb"><a href="index.html">Home</a> / Gallery</div>
+      <h1>Photo Gallery</h1>
+      <p>Moments of learning, celebration and togetherness at our school</p>
+    </div>
+  </div>
+
+  <section class="gallery-page">
+    <div class="container">
+      <div class="gallery-full" id="galleryGrid">
+        <div class="gal-item" data-src="assets/images/758350413_17968313076136020_1049337019373256418_n.jpg"><img src="assets/images/758350413_17968313076136020_1049337019373256418_n.jpg" alt="Students with Director"><div class="cap">Students with Director</div></div>
+        <div class="gal-item" data-src="assets/images/758386648_17968313127136020_3490152456474895318_n.jpg"><img src="assets/images/758386648_17968313127136020_3490152456474895318_n.jpg" alt="Our Team"><div class="cap">Our Dedicated Team</div></div>
+        <div class="gal-item" data-src="assets/images/758744435_17968313118136020_7858107183034146895_n.jpg"><img src="assets/images/758744435_17968313118136020_7858107183034146895_n.jpg" alt="Proud Students"><div class="cap">Proud Students</div></div>
+        <div class="gal-item" data-src="assets/images/775727204_17971087956136020_7499521953095397054_n.jpg"><img src="assets/images/775727204_17971087956136020_7499521953095397054_n.jpg" alt="Independence Day"><div class="cap">Independence Day Celebration</div></div>
+        <div class="gal-item" data-src="assets/images/788550070_17973038100136020_6775623352227198302_n.jpg"><img src="assets/images/788550070_17973038100136020_6775623352227198302_n.jpg" alt="Raksha Bandhan"><div class="cap">Festival Celebrations</div></div>
+        <div class="gal-item" data-src="assets/images/791974187_17974189602136020_4637556111291290710_n.jpg"><img src="assets/images/791974187_17974189602136020_4637556111291290710_n.jpg" alt="Janmashtami"><div class="cap">Janmashtami Celebration</div></div>
+        <div class="gal-item" data-src="assets/images/793867419_17974189392136020_612307495707109300_n.jpg"><img src="assets/images/793867419_17974189392136020_612307495707109300_n.jpg" alt="Cultural Program"><div class="cap">Cultural Programs</div></div>
+        <div class="gal-item" data-src="assets/images/796409253_17974336404136020_2560670387261433691_n.jpg"><img src="assets/images/796409253_17974336404136020_2560670387261433691_n.jpg" alt="Morning Assembly"><div class="cap">Morning Assembly</div></div>
+        <div class="gal-item" data-src="assets/images/810182401_17975957433136020_3336119740968604405_n.jpg"><img src="assets/images/810182401_17975957433136020_3336119740968604405_n.jpg" alt="Special Celebration"><div class="cap">Special Celebrations</div></div>
+        <div class="gal-item" data-src="assets/images/812133086_17975957523136020_5651147639070418368_n.jpg"><img src="assets/images/812133086_17975957523136020_5651147639070418368_n.jpg" alt="Joyful Moments"><div class="cap">Joyful Occasions</div></div>
+        <div class="gal-item" data-src="assets/images/image-extractpics.jpg"><img src="assets/images/image-extractpics.jpg" alt="Republic Day"><div class="cap">Republic Day Performance</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lbClose">&times;</button>
+    <button class="lightbox-nav lightbox-prev" id="lbPrev"><i class="fas fa-chevron-left"></i></button>
+    <img src="" alt="Gallery" id="lbImg">
+    <button class="lightbox-nav lightbox-next" id="lbNext"><i class="fas fa-chevron-right"></i></button>
+  </div>
+
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <div class="logo-area">
+          <img src="assets/images/logo.png" alt="Logo">
+          <div class="logo-text"><strong>GLOBAL KNOWLEDGE</strong><strong>PUBLIC SCHOOL</strong><span>Nirmali-05, Supaul</span></div>
+        </div>
+        <p class="quote">"Good Education builds better citizens for a brighter nation."</p>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="admissions.html">Admissions</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+917296092039">7296092039</a></li>
+          <li><a href="mailto:gkpsnirmali@gmail.com">gkpsnirmali@gmail.com</a></li>
+          <li>Nirmali-05, Supaul, Bihar</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom"><div class="container">&copy; 2023–2026 Global Knowledge Public School. All Rights Reserved.</div></div>
+  </footer>
+
+  <a href="https://wa.me/917296092039?text=Hello%2C%20I%20would%20like%20to%20enquire%20about%20admission." class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+  <script src="assets/js/main.js"></script>
+  <script>
+    // Gallery lightbox
+    const items = document.querySelectorAll('.gal-item');
+    const lb = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lbImg');
+    let idx = 0;
+    const srcs = Array.from(items).map(i => i.dataset.src);
+    items.forEach((item, i) => {
+      item.addEventListener('click', () => { idx = i; lbImg.src = srcs[idx]; lb.classList.add('active'); document.body.style.overflow='hidden'; });
+    });
+    document.getElementById('lbClose').onclick = () => { lb.classList.remove('active'); document.body.style.overflow=''; };
+    document.getElementById('lbPrev').onclick = () => { idx = (idx - 1 + srcs.length) % srcs.length; lbImg.src = srcs[idx]; };
+    document.getElementById('lbNext').onclick = () => { idx = (idx + 1) % srcs.length; lbImg.src = srcs[idx]; };
+    lb.addEventListener('click', e => { if (e.target === lb) { lb.classList.remove('active'); document.body.style.overflow=''; } });
+    document.addEventListener('keydown', e => {
+      if (!lb.classList.contains('active')) return;
+      if (e.key === 'Escape') { lb.classList.remove('active'); document.body.style.overflow=''; }
+      if (e.key === 'ArrowLeft') document.getElementById('lbPrev').click();
+      if (e.key === 'ArrowRight') document.getElementById('lbNext').click();
+    });
+  </script>
+</body>
+</html>
